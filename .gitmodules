@@ -1,0 +1,3 @@
+[submodule "projects/examples/loops"]
+	path = projects/examples/loops
+	url = https://github.com/ViktorHefringMarine/Rust.git

@@ -1,15 +1,30 @@
 
-use std::io;
+
+fn print_type_of<T>(_: &T) {
+    println!("print_type_of ->   {}", std::any::type_name::<T>())
+}
 
 
-fn main() {
+fn run(what:i8, something:&str) {
+    println!("----");
     println!("Guess the number!");
-    println!("Please input your guess.");
+    println!("Please input your guess:");
+
     let mut guess = String::new();
 
-    io::stdin()
+    std::io::stdin()
         .read_line(&mut guess)
-        .expect_err("Failed to read line");
+        .expect("Failed to read line");
+    guess.push_str("Whaat");
 
-    println!("You guessed: {}", guess)
+
+    println!("You guessed: {}, {}, {}", guess, what, something);
+
+    print_type_of(&guess);
 }
+
+fn main() {
+    run(3,"jk");
+    run(3,"aj");
+}
+
